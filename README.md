@@ -4,18 +4,18 @@ This repository contains all the class files
 
 ## Assignment - 1
 
-<img src="./screenshots/homescreen.jpg">
+<img height="500" src="./screenshots/homescreen.jpg">
 
 ## Assignment - 2
 
 ### Login
 
-<img src="./screenshots/login.jpg">
+<img height="500" src="./screenshots/login.jpg">
 
 ### Register
 
-<img src="./screenshots/register.jpg">
+<img height="500" src="./screenshots/register.jpg">
 
 ## Assignment - 3
 
-<img src="./screenshots/buttons.jpg">
+<img height="500" src="./screenshots/buttons.jpg">
