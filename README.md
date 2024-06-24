@@ -8,13 +8,9 @@ This repository contains all the class files
 
 ## Assignment - 2
 
-### Login
+### Login and Register
 
-<img height="500" src="./screenshots/login.jpg">
-
-### Register
-
-<img height="500" src="./screenshots/register.jpg">
+<img height="500" src="./screenshots/login.jpg" style="margin-right: 150px"> <img height="500" src="./screenshots/register.jpg">
 
 ## Assignment - 3
 
