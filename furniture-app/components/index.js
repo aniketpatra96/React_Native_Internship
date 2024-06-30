@@ -1,3 +1,3 @@
 import Welcome from "./home/Welcome";
-
-export { Welcome };
+import Carousel from "./home/Carousels";
+export { Welcome, Carousel};

@@ -1,4 +1,3 @@
-
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
@@ -11,7 +10,18 @@ import PoppinsLight from "./assets/fonts/Poppins-Light.ttf";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabNavigation from "./navigation/BottomTabNavigation";
-import { Cart } from "./screens";
+import {
+  Profile,
+  Cart,
+  ProductDetails,
+  WelcomeScreen,
+  LoginScreen,
+  RegisterScreen,
+  Favorite,
+} from "./screens";
+import UserContextProvider from "./contexts/userContext";
+import { FavoriteProvider } from "./contexts/favoriteContext";
+import { CartProvider } from "./contexts/cartContext";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -32,25 +42,71 @@ export default function App() {
     return null;
   }
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Bottom Navigation"
-          component={BottomTabNavigation}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Cart"
-          component={Cart}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <UserContextProvider>
+      <FavoriteProvider>
+        <CartProvider>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home">
+              <Stack.Screen
+                name="Bottom Navigation"
+                component={BottomTabNavigation}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Cart"
+                component={Cart}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="ProductDetails"
+                component={ProductDetails}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Home"
+                component={WelcomeScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Login"
+                component={LoginScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Register"
+                component={RegisterScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="Favorite"
+                component={Favorite}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </CartProvider>
+      </FavoriteProvider>
+    </UserContextProvider>
   );
 }
-
-
