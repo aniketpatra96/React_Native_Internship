@@ -98,17 +98,17 @@ import { COLORS, SIZES } from "../../constants";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./productCardView.style";
-import addToCart, { removeFromCart } from "../../utils/handleCart";
+// import addToCart, { removeFromCart } from "../../utils/handleCart";
 import { cartContext } from "../../contexts/cartContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 const ProductCardView = ({ item, isCart = false }) => {
   const navigation = useNavigation();
-  const { dispatch } = useContext(cartContext);
+  const { addToCart, removeFromCart } = useContext(cartContext);
   const handleCart = () => {
-    addToCart(dispatch, item);
+    addToCart(item);
   };
   const removeCart = () => {
-    removeFromCart(dispatch, item._id);
+    removeFromCart(item,item._id);
   };
   return (
     <TouchableOpacity
